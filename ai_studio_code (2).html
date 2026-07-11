@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CERTIPRO 360 · Organismo Certificador Oficial SEP · CONOCER</title>
+
+<!-- Fonts & Iconography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ══════════════════════════════════════
+   SISTEMA DE DISEÑO EDTECH PREMIUM (CORPORATE LIGHT)
+══════════════════════════════════════ */
+:root {
+  /* Paleta Corporativa Institucional */
+  --wine: #8B0000; 
+  --wine-light: #a81010;
+  --gold: #D4AF37; 
+  --gold-light: #f1cc50;
+  
+  /* Color Blocking Base (Clean Light Environment) */
+  --bg-body: #ffffff; /* Pure white base for maximum contrast */
+  --bg-card: #f4f5f7; /* Sophisticated light gray for cards & banners */
+  --bg-surface: #ffffff; /* Pure white for highlighted/elevated elements */
+  
+  /* Tipografía Absoluta */
+  --text-main: #1a1d20; /* Corporate dark gray for maximum readability */
+  --text-muted: #4a5568; /* Readable muted gray */
+  --text-light: #ffffff; /* White ONLY for wine-red backgrounds */
+
+  /* Radios y Transiciones */
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --bezier: ease-in-out;
+  --transition: all 0.3s var(--bezier); /* Refined micro-interaction timing */
+  
+  /* Sombras Premium (SaaS Style) */
+  --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.08); /* Soft fade-in shadow */
+  --shadow-glow: 0 0 20px rgba(139, 0, 0, 0.1);
+}
+
+/* ══════════════════════════════════════
+   RESET Y BASE
+══════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; background-color: var(--bg-body); }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  font-size: 16px; 
+  line-height: 1.6;
+  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--wine); }
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+.section-block {
+  padding: clamp(80px, 10vw, 140px) 24px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-body);
+}
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  position: relative; 
+  z-index: 2; 
+}
+
+/* ══════════════════════════════════════
+   ANIMACIONES FLUIDAS (BLUR & STAGGERED)
+══════════════════════════════════════ */
+.reveal-up { opacity: 0; transform: translateY(40px) scale(0.98); filter: blur(8px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform, filter; }
+.reveal-scale { opacity: 0; transform: scale(0.92); filter: blur(8px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform, filter; }
+.reveal-left { opacity: 0; transform: translateX(-40px); filter: blur(8px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform, filter; }
+.reveal-right { opacity: 0; transform: translateX(40px); filter: blur(8px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform, filter; }
+
+.is-visible { opacity: 1; transform: translate(0) scale(1); filter: blur(0); }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ══════════════════════════════════════
+   TARJETAS PREMIUM (INTERACTIVAS)
+══════════════════════════════════════ */
+.premium-card {
+  border-radius: var(--radius-xl);
+  padding: clamp(32px, 4vw, 48px);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card); /* Sophisticated light gray */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-subtle);
+}
+
+.premium-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(139, 0, 0, 0.1);
+}
+
+/* Borde Animado Elegante (SaaS Style) */
+.animated-border-glow { position: relative; }
+.animated-border-glow::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  border-radius: inherit; padding: 2px;
+  background: linear-gradient(45deg, rgba(139,0,0,0.1), var(--gold), rgba(139,0,0,0.1), var(--wine));
+  background-size: 200% 200%;
+  animation: borderFlowSleek 6s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+@keyframes borderFlowSleek {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ══════════════════════════════════════
+   ELEMENTOS VISUALES (PILLS, BOTONES, TEXTOS)
+══════════════════════════════════════ */
+.section-header {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; margin-bottom: clamp(64px, 8vw, 80px); position: relative;
+}
+
+/* Sleek Capsule Badges */
+.section-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 999px; margin-bottom: 24px;
+  font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  transition: var(--transition);
+  background: rgba(139, 0, 0, 0.05); color: var(--wine);
+  border: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 52px); font-weight: 800; line-height: 1.15;
+  letter-spacing: -0.03em; margin-bottom: 24px; color: var(--text-main);
+}
+.section-sub {
+  font-size: clamp(18px, 2vw, 20px); max-width: 700px; margin: 0 auto; line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Botones Dinámicos */
+.btn-primary {
+  background: var(--wine);
+  color: var(--text-light); padding: clamp(16px, 2vw, 18px) clamp(32px, 4vw, 40px); 
+  font-size: 16px; font-weight: 600; border-radius: 999px; 
+  display: inline-flex; align-items: center; gap: 10px;
+  white-space: nowrap; transition: var(--transition);
+  border: 1px solid transparent;
+  box-shadow: 0 8px 20px rgba(139, 0, 0, 0.15);
+}
+.btn-primary i { transition: transform 0.3s ease; }
+.btn-primary:hover { 
+  background: var(--wine-light); 
+  transform: scale(1.02); 
+  box-shadow: 0 12px 25px rgba(139, 0, 0, 0.25); 
+}
+.btn-primary:hover i { transform: translateX(4px); }
+
+.btn-ghost {
+  border: 1px solid var(--wine); color: var(--wine); 
+  padding: clamp(16px, 2vw, 18px) clamp(32px, 4vw, 40px);
+  font-size: 16px; font-weight: 600; border-radius: 999px;
+  background: transparent; backdrop-filter: blur(10px); 
+  white-space: nowrap; transition: var(--transition);
+}
+.btn-ghost:hover { 
+  background: rgba(139, 0, 0, 0.05); 
+  transform: scale(1.02); 
+}
+
+/* Listas Interactivas */
+.stagger-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.stagger-list li {
+  display: flex; align-items: flex-start; gap: 16px; font-size: 16px; line-height: 1.6;
+  transition: var(--transition); color: var(--text-muted);
+}
+.stagger-list li i { margin-top: 4px; font-size: 18px; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.stagger-list li:hover { transform: translateX(8px); color: var(--text-main); }
+.stagger-list li:hover i { transform: scale(1.3) rotate(5deg); }
+
+.stagger-list li.yes i { color: var(--wine); } 
+.stagger-list li.no i { color: #ef4444; }
+
+/* ══════════════════════════════════════
+   WATERMARKS (TEXTURAS DISCRETAS)
+══════════════════════════════════════ */
+.bg-logo-watermark {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 1200px; max-width: 120vw;
+  opacity: 0.03; /* Ultra discreto en fondo claro */
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
+  -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 65%);
+  mask-image: radial-gradient(circle at center, black 20%, transparent 65%);
+  filter: grayscale(100%);
+}
+.wm-right { top: 50%; right: -20%; transform: translateY(-50%); }
+.wm-left { top: 50%; left: -20%; transform: translateY(-50%); }
+.wm-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.card-anchor-logo {
+  position: absolute; top: 24px; right: 24px; width: 45px; height: auto;
+  opacity: 0.15; pointer-events: none; transition: var(--transition);
+  z-index: 10; filter: grayscale(100%);
+}
+.premium-card:hover .card-anchor-logo { opacity: 0.4; transform: scale(1.1) rotate(5deg); filter: grayscale(0%); }
+
+/* ══════════════════════════════════════
+   URGENCY BAR & HEADER
+══════════════════════════════════════ */
+.urgency-bar {
+  background: var(--wine);
+  color: var(--text-light); padding: 10px 24px; display: flex; align-items: center;
+  justify-content: center; gap: 16px; font-size: 13px; font-weight: 500;
+  position: relative; z-index: 500; flex-wrap: wrap;
+}
+.urgency-bar strong { color: var(--gold-light); font-weight: 600; }
+.cd-wrap { display: flex; gap: 4px; align-items: center; }
+.cd-block {
+  background: rgba(0, 0, 0, 0.2); border-radius: 4px; padding: 2px 8px;
+  font-family: 'DM Mono', monospace; font-weight: 600; min-width: 32px; text-align: center;
+}
+.urgency-bar a { color: var(--text-light); text-decoration: underline; font-weight: 600; margin-left: 8px; }
+.urgency-bar a:hover { color: var(--gold-light); }
+
+header {
+  position: fixed; left: 0; right: 0; top: 40px; z-index: 400;
+  transition: var(--transition); padding: 0 24px;
+}
+header.scrolled { top: 0; padding: 0; }
+.nav-container {
+  max-width: 1200px; margin: 0 auto; background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.05); border-radius: 999px; box-shadow: var(--shadow-subtle);
+  padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;
+  transition: var(--transition); margin-top: 16px;
+}
+header.scrolled .nav-container {
+  border-radius: 0; border: none; margin-top: 0; max-width: 100%;
+  background: rgba(255, 255, 255, 0.98); border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 16px 40px; box-shadow: var(--shadow-subtle);
+}
+.nav-logo img { height: 32px; width: auto; object-fit: contain; }
+
+.nav-center { display: flex; align-items: center; }
+.nav-links { display: flex; list-style: none; gap: 4px; }
+.nav-links a {
+  font-size: 14px; font-weight: 600; color: var(--text-muted);
+  padding: 8px 16px; border-radius: 999px; transition: var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--wine); background: rgba(139,0,0,0.05); }
+
+/* Social Icons in Header */
+.nav-socials { 
+  display: flex; gap: 12px; align-items: center; 
+  margin-left: 16px; padding-left: 16px; 
+  border-left: 1px solid rgba(0,0,0,0.1); 
+}
+.nav-socials a { 
+  color: var(--text-muted); font-size: 16px; transition: var(--transition); 
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-socials a:hover { color: var(--wine); transform: scale(1.15); }
+
+.nav-btn {
+  background: var(--wine); color: var(--text-light); padding: 10px 20px; border-radius: 999px;
+  font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition);
+}
+.nav-btn:hover { background: var(--wine-light); transform: scale(1.02); box-shadow: 0 8px 15px rgba(139,0,0,0.2); }
+
+@media(max-width: 950px) { 
+  .nav-center { display: none; } 
+}
+
+/* ══════════════════════════════════════
+   HERO SECTION (CLEAN CORPORATE)
+══════════════════════════════════════ */
+.hero {
+  min-height: 100vh; padding: clamp(160px, 15vw, 200px) 24px 80px; 
+  display: flex; flex-direction: column; align-items: center; justify-content: center; 
+  text-align: center; position: relative;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-body) 100%);
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px; mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  pointer-events: none;
+}
+.hero-main-logo {
+  max-width: 450px; width: 100%; margin: 0 auto 48px; z-index: 2; position: relative;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+}
+.hero-title {
+  font-size: clamp(48px, 7vw, 88px); font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.04em; color: var(--text-main); max-width: 900px; margin: 0 auto 24px; z-index: 2; position: relative;
+}
+.hero-title span.accent-wine {
+  background: linear-gradient(to right, var(--wine), var(--wine-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: clamp(18px, 2vw, 22px); color: var(--text-muted); max-width: 650px;
+  margin: 0 auto 48px; z-index: 2; position: relative; line-height: 1.6;
+}
+.hero-sub strong { color: var(--text-main); font-weight: 600; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; z-index: 2; position: relative; width: 100%; }
+
+/* ══════════════════════════════════════
+   ANÁLISIS MULTIMEDIA (CLEAN PLAYERS)
+══════════════════════════════════════ */
+.multimedia-layout { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); 
+  gap: 40px; 
+  align-items: stretch; 
+}
+.media-card { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+}
+.media-header { margin-bottom: 24px; }
+.media-badge {
+  font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 600;
+  color: var(--wine); text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 12px;
+  background: rgba(139,0,0,0.05); padding: 4px 12px; border-radius: 999px;
+}
+.media-title { font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); margin-bottom: 8px; }
+.media-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 24px; }
+
+/* Premium HTML5 Players */
+.premium-media-player {
+  width: 100%;
+  border-radius: var(--radius-md);
+  outline: none;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #000; /* Keeps video letterboxing clean */
+  transition: var(--transition);
+}
+.premium-media-player:hover {
+  box-shadow: var(--shadow-hover);
+}
+video.premium-media-player {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+audio.premium-media-player {
+  height: 54px;
+  background: var(--bg-surface);
+}
+
+/* ══════════════════════════════════════
+   ECOSISTEMA DE CONFIANZA
+══════════════════════════════════════ */
+.ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+
+.inst-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
+}
+.inst-icon {
+  width: 56px; height: 56px; border-radius: 12px; background: rgba(139,0,0,0.05);
+  color: var(--wine); display: flex; align-items: center; justify-content: center;
+  font-size: 24px; border: 1px solid rgba(139,0,0,0.1); transition: var(--transition);
+}
+.inst-card:hover .inst-icon { background: var(--wine); color: #fff; transform: scale(1.1) rotate(-5deg); box-shadow: var(--shadow-glow); }
+
+.inst-name { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.1em; }
+.inst-title { font-size: 20px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; color: var(--text-main); }
+.inst-desc { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+.eco-link { font-size: 14px; font-weight: 600; color: var(--wine); margin-top: auto; display: inline-flex; align-items: center; gap: 8px; }
+.eco-link:hover { color: var(--wine-light); transform: translateX(6px); }
+
+/* Verificación ICE */
+.ice-verification {
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  margin-top: 64px;
+}
+.ice-logo-img { height: 40px; width: auto; object-fit: contain; }
+.ice-verification p { font-size: clamp(16px, 2vw, 18px); color: var(--text-muted); flex: 1; min-width: min(100%, 300px); }
+.ice-verification p strong { color: var(--text-main); font-weight: 600; }
+.btn-verify {
+  background: transparent; border: 1px solid var(--wine); color: var(--wine);
+  padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); white-space: nowrap;
+}
+.btn-verify:hover { background: var(--wine); color: var(--text-light); transform: scale(1.02); box-shadow: 0 8px 15px rgba(139,0,0,0.2); }
+
+/* Certificado Showcase */
+.certificate-showcase {
+  margin-top: 100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 64px; align-items: center;
+}
+.cert-image-container { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-subtle); }
+.cert-details-box h3 { font-size: clamp(28px, 3.5vw, 36px); font-weight: 700; margin-bottom: 20px; letter-spacing: -0.03em; color: var(--text-main); }
+.cert-details-box p { font-size: 16px; color: var(--text-muted); margin-bottom: 32px; }
+.cert-feature-item i { color: var(--wine); font-size: 20px; background: rgba(139,0,0,0.05); padding: 8px; border-radius: 8px; }
+
+/* ══════════════════════════════════════
+   PROPÓSITO Y PLATAFORMAS
+══════════════════════════════════════ */
+.model-explanation { text-align: center; max-width: 800px; margin: 0 auto 80px; }
+.model-explanation p { font-size: clamp(20px, 3vw, 24px); color: var(--text-muted); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em; }
+.model-explanation p strong { color: var(--text-main); font-weight: 600; }
+
+.diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 24px; margin-bottom: 100px; }
+.diff-card-title {
+  font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px; letter-spacing: -0.02em; color: var(--text-main);
+}
+
+.platforms-title { text-align: center; font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 48px; letter-spacing: -0.02em; color: var(--text-main); }
+.platform-logos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px; }
+
+.platform-logo-card {
+  text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  padding: 40px 24px;
+}
+.platform-img { height: 50px; width: auto; object-fit: contain; transition: var(--transition); filter: grayscale(100%) opacity(0.6); }
+.platform-logo-card:hover .platform-img { transform: scale(1.05); filter: grayscale(0%) opacity(1); }
+.platform-logo-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+/* ══════════════════════════════════════
+   ¿PARA QUIÉN ES?
+══════════════════════════════════════ */
+.profiles-modern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px; }
+.profile-modern-card { padding: 0; display: flex; flex-direction: column; }
+.profile-img-wrap { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.profile-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1); opacity: 0.9; }
+.profile-modern-card:hover .profile-img-wrap img { transform: scale(1.08); opacity: 1; }
+.profile-modern-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+.profile-modern-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; color: var(--text-main); }
+.profile-modern-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+/* ══════════════════════════════════════
+   INVERSIÓN Y PROCESO (ESTÁNDARES)
+══════════════════════════════════════ */
+.timeline-wrapper { max-width: 800px; margin: 0 auto 100px; }
+.timeline-container { position: relative; padding-left: 40px; }
+.timeline-container::before {
+  content: ''; position: absolute; left: 11px; top: 10px; bottom: 10px;
+  width: 2px; background: rgba(0,0,0,0.05);
+}
+.timeline-progress {
+  position: absolute; left: 11px; top: 10px; width: 2px;
+  background: var(--wine); height: 0; transition: height 0.5s ease-out;
+}
+.timeline-item { position: relative; padding-bottom: 48px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -33px; top: 6px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--bg-surface); border: 2px solid rgba(0,0,0,0.1);
+  z-index: 2; transition: var(--transition);
+}
+.timeline-item.active .timeline-dot { border-color: var(--wine); background: var(--wine); box-shadow: 0 0 15px rgba(139,0,0,0.2); transform: scale(1.2); }
+.timeline-card { transition: var(--transition); opacity: 0.5; }
+.timeline-item.active .timeline-card { opacity: 1; transform: translateX(12px); }
+.timeline-step {
+  font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 600;
+  color: var(--wine); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.1em;
+}
+.timeline-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; color: var(--text-main); }
+.timeline-desc { font-size: 15px; color: var(--text-muted); }
+
+/* Standards Grid (Detailed Breakdown) */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 24px; }
+.pricing-card { display: flex; flex-direction: column; justify-content: space-between; }
+.pricing-tag {
+  font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 600;
+  color: var(--wine); text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.1em;
+  background: rgba(139,0,0,0.05); padding: 4px 12px; border-radius: 999px; display: inline-block;
+}
+.pricing-title { font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.02em; color: var(--text-main); }
+.pricing-desc { font-size: 15px; margin-bottom: 32px; color: var(--text-muted); }
+.pricing-btn {
+  width: 100%; display: block; text-align: center; padding: 16px; border-radius: 999px;
+  font-size: 15px; font-weight: 600; transition: var(--transition);
+  background: rgba(0,0,0,0.03); color: var(--text-main); border: 1px solid transparent;
+}
+.pricing-card:hover .pricing-btn { background: var(--wine); color: var(--text-light); transform: scale(1.02); box-shadow: 0 8px 15px rgba(139,0,0,0.2); }
+
+/* Star Standard Highlight */
+.star-standard {
+  border: 1px solid var(--gold) !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+  background: var(--bg-surface) !important; /* Pure white to pop against gray cards */
+}
+.star-standard:hover {
+  border-color: var(--gold-light) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+  transform: scale(1.02);
+}
+.price-box {
+  background: rgba(139,0,0,0.03); border: 1px solid rgba(139,0,0,0.05);
+  border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;
+}
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.price-row:last-child { margin-bottom: 0; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.05); }
+.price-label { font-size: 14px; color: var(--text-muted); }
+.price-value { font-size: 18px; font-weight: 700; color: var(--text-main); letter-spacing: -0.01em; }
+
+/* ══════════════════════════════════════
+   PREGUNTAS FRECUENTES
+══════════════════════════════════════ */
+.faq-wrapper { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden; transition: var(--transition);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-trigger {
+  width: 100%; background: none; border: none; padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  text-align: left; cursor: pointer; color: var(--text-main);
+}
+.faq-question { font-size: clamp(16px, 2vw, 18px); font-weight: 600; letter-spacing: -0.01em; }
+.faq-icon { font-size: 16px; color: var(--wine); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); flex-shrink: 0; margin-left: 24px; }
+.faq-panel {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), padding 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 0; font-size: 15px; color: var(--text-muted); line-height: 1.6;
+}
+.faq-item.active .faq-icon { transform: rotate(45deg); color: var(--wine-light); }
+.faq-item.active .faq-panel { padding-bottom: 24px; }
+
+/* ══════════════════════════════════════
+   FORMULARIO DE CONTACTO
+══════════════════════════════════════ */
+.contact-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 64px; }
+.contact-info { display: flex; flex-direction: column; gap: 32px; }
+.contact-pill { display: flex; align-items: flex-start; gap: 20px; transition: var(--transition); }
+.contact-pill:hover { transform: scale(1.02); }
+.contact-pill-icon { font-size: 24px; color: var(--wine); margin-top: 4px; transition: var(--transition); }
+.contact-pill:hover .contact-pill-icon { transform: scale(1.2) rotate(10deg); }
+.contact-pill-meta h6 { font-family: 'DM Mono', monospace; font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; letter-spacing: 0.1em; }
+.contact-pill-meta p { font-size: 18px; font-weight: 600; color: var(--text-main); word-break: break-word; }
+
+.form-wrapper { padding: clamp(32px, 4vw, 48px); }
+.form-title { font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; color: var(--text-main); }
+.form-subtext { font-size: 15px; margin-bottom: 32px; color: var(--text-muted); }
+.form-group { margin-bottom: 24px; }
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 24px; margin-bottom: 24px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+.form-input, .form-select {
+  width: 100%; background: var(--bg-surface); border: 1px solid rgba(0,0,0,0.1);
+  padding: 16px; border-radius: var(--radius-sm); font-family: inherit;
+  font-size: 15px; color: var(--text-main); outline: none; transition: var(--transition);
+}
+.form-input:focus, .form-select:focus { border-color: var(--wine); background: var(--bg-surface); box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1); }
+.form-submit-btn {
+  width: 100%; background: var(--wine); color: var(--text-light); 
+  padding: 16px; border: none; border-radius: 999px;
+  font-size: 16px; font-weight: 600; cursor: pointer; transition: var(--transition);
+  margin-top: 16px;
+}
+.form-submit-btn:hover { background: var(--wine-light); transform: scale(1.02); box-shadow: 0 10px 25px rgba(139, 0, 0, 0.2); }
+.form-success-card { display: none; text-align: center; padding: 48px 24px; }
+.success-icon { font-size: 64px; color: #10b981; margin-bottom: 24px; }
+.success-title { font-size: 24px; font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+.success-text { font-size: 15px; color: var(--text-muted); margin-bottom: 32px; }
+
+/* ══════════════════════════════════════
+   FOOTER (CLEAN CORPORATE)
+══════════════════════════════════════ */
+footer {
+  background: var(--bg-surface); color: var(--text-main); padding: 80px 24px 40px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+.footer-container {
+  max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 48px; margin-bottom: 48px;
+}
+.footer-logo img { height: 40px; width: auto; object-fit: contain; }
+.footer-links { list-style: none; display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { font-size: 14px; color: var(--text-muted); font-weight: 600; transition: var(--transition); }
+.footer-links a:hover { color: var(--wine); transform: scale(1.02); display: inline-block; }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(0,0,0,0.03);
+  display: flex; align-items: center; justify-content: center; color: var(--text-muted);
+  font-size: 18px; transition: var(--transition);
+}
+.footer-socials a:hover { background: var(--wine); color: var(--text-light); transform: scale(1.1); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+  font-size: 13px; color: var(--text-muted); flex-wrap: wrap; gap: 16px;
+}
+
+/* Floating WhatsApp Button (Animated) */
+@keyframes pulseWa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.whatsapp-float {
+  position: fixed; bottom: 32px; right: 32px; background-color: #25d366; color: #ffffff;
+  width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 28px; z-index: 499;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); animation: pulseWa 2s infinite;
+}
+.whatsapp-float:hover { animation: none; transform: scale(1.15) translateY(-4px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); }
+</style>
+</head>
+<body>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/522213717847?text=Hola%20CERTIPRO%20360%2C%20me%20interesa%20certificarme%20%F0%9F%8F%85" class="whatsapp-float" target="_blank" rel="noopener">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar" id="urgencyBar">
+  <span>🎉 <strong>Oferta de lanzamiento:</strong> Descuento especial en tu primera certificación — termina en</span>
+  <div class="cd-wrap">
+    <span class="cd-block" id="cdH">--</span>:
+    <span class="cd-block" id="cdM">--</span>:
+    <span class="cd-block" id="cdS">--</span>
+  </div>
+  <a href="#contacto">¡Aprovéchalo!</a>
+</div>
+
+<!-- NAVEGACIÓN -->
+<header id="header">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1782855007/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_3_axvsiq.png" alt="CERTIPRO 360 Logo">
+    </a>
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#estudio">Análisis</a></li>
+        <li><a href="#ecosistema">Ecosistema</a></li>
+        <li><a href="#para-quien">Perfiles</a></li>
+        <li><a href="#inversion">Estándares</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-socials">
+        <a href="https://www.tiktok.com/@certipro360" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/certipro360/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/CERTIPRO360" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/certi-pro-611053412/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <a href="#contacto" class="nav-btn">Comenzar <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</header>
+
+<!-- HERO (CLEAN CORPORATE) -->
+<section class="hero" id="hero">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1782864415/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_4_kied0o.png" alt="CertiPro 360" class="hero-main-logo reveal-scale">
+  
+  <div class="section-pill reveal-up delay-1">
+    <i class="fa-solid fa-circle-check"></i> Certificación CONOCER · SEP
+  </div>
+  <h1 class="hero-title reveal-up delay-1">Tu experiencia<br>merece ser <span class="accent-wine">oficial</span></h1>
+  <p class="hero-sub reveal-up delay-2">Eres especialista en tu área. <strong>Estructura y convalida tu conocimiento</strong> bajo estándares federales de la SEP, logrando la credibilidad institucional que demanda el mercado actual.</p>
+
+  <div class="hero-actions reveal-up delay-2">
+    <a href="#contacto" class="btn-primary">Quiero certificarme <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#estudio" class="btn-ghost">Ver Metodología</a>
+  </div>
+</section>
+
+<!-- SECCIÓN: ANÁLISIS MULTIMEDIA (CLEAN PLAYERS) -->
+<section class="section-block" id="estudio">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_00.17.28_feujsp.png" class="bg-logo-watermark wm-left" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-photo-film"></i>
+        <span>Análisis Estratégico Multicanal</span>
+      </div>
+      <h2 class="section-title">Centro de Control de Conocimiento</h2>
+      <p class="section-sub">Consulte de forma interactiva por qué consultores, creadores y corporativos en México validan su experiencia mediante una metodología de alta fidelidad pedagógica.</p>
+    </div>
+    
+    <div class="multimedia-layout">
+      <!-- Video Player -->
+      <div class="premium-card media-card animated-border-glow reveal-left delay-1">
+        <div>
+          <div class="media-header">
+            <span class="media-badge">Masterclass Visual</span>
+            <h3 class="media-title">Experiencia sin papeles</h3>
+            <p class="media-desc">Descubre el impacto de respaldar tu trayectoria empírica con documentación oficial.</p>
+          </div>
+          <video id="mainVideo" src="https://res.cloudinary.com/dqtjra1kg/video/upload/v1783732789/Experiencia_sin_papeles_x1hioq.mp4" controls class="premium-media-player" preload="metadata"></video>
+        </div>
+      </div>
+
+      <!-- Audio Player (Podcast Style) -->
+      <div class="premium-card media-card reveal-right delay-2">
+        <div>
+          <div class="media-header">
+            <span class="media-badge">Podcast de Autoridad</span>
+            <h3 class="media-title">Cursos SEP vs. Guerra de Precios</h3>
+            <p class="media-desc">Análisis profundo sobre cómo la certificación oficial eleva el valor percibido de tus servicios educativos.</p>
+          </div>
+          <div style="margin-top: auto;">
+            <audio id="mainAudio" src="https://res.cloudinary.com/dqtjra1kg/video/upload/v1783732790/Cursos_SEP_contra_la_guerra_de_precios_bwovoe.mp4" controls class="premium-media-player" preload="metadata"></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: ECOSISTEMA DE CONFIANZA -->
+<section class="section-block" id="ecosistema">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_1_hvvvfm.png" class="bg-logo-watermark wm-right" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Ecosistema de confianza</span>
+      </div>
+      <h2 class="section-title">Validez y Respaldo de tu Certificación</h2>
+      <p class="section-sub">Garantizamos transparencia total integrando las dependencias oficiales más importantes de educación en el país.</p>
+    </div>
+    
+    <div class="ecosystem-grid">
+      <div class="premium-card inst-card reveal-up delay-1">
+        <div class="inst-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div>
+          <div class="inst-name">SEP</div>
+          <h3 class="inst-title">Secretaría de Educación Pública</h3>
+        </div>
+        <p class="inst-desc">La máxima autoridad educativa de México. Brinda soporte legal a su estatus profesional emitiendo un folio único nacional con validez federal.</p>
+        <a href="https://www.gob.mx/sep/articulos/certifica-tus-competencias-labores-conoce-el-conocer" target="_blank" rel="noopener" class="eco-link">Artículo de Respaldo SEP <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <div class="premium-card inst-card reveal-up delay-2">
+        <div class="inst-icon"><i class="fa-solid fa-file-signature"></i></div>
+        <div>
+          <div class="inst-name">CONOCER</div>
+          <h3 class="inst-title">Sistema Nacional de Competencias</h3>
+        </div>
+        <p class="inst-desc">Organismo regulador que establece las normas de competencia que validan de manera integral su habilidad operativa.</p>
+        <a href="https://conocer.gob.mx/" target="_blank" rel="noopener" class="eco-link">Sitio Oficial CONOCER <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <div class="premium-card inst-card reveal-up delay-3">
+        <div class="inst-icon"><i class="fa-solid fa-address-card"></i></div>
+        <div>
+          <div class="inst-name">RENAP</div>
+          <h3 class="inst-title">Registro de Personas Certificadas</h3>
+        </div>
+        <p class="inst-desc">Directorio de datos del gobierno federal donde clientes o contratistas corroboran en tiempo real la validez del certificado.</p>
+        <a href="https://conocer.gob.mx/registro-nacional-personas-competencias-certificadas/" target="_blank" rel="noopener" class="eco-link">Portal de Registro RENAP <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+
+    <div class="premium-card ice-verification animated-border-glow reveal-scale delay-1">
+      <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_1_hvvvfm.png" class="card-anchor-logo" alt="Sello de Autenticidad">
+      <img src="https://content.app-sources.com/s/002283321762382631/uploads/Images/ICEMexico-sin_logo-9769433.png?format=webp" alt="ICE Mexico" class="ice-logo-img" style="filter: brightness(0) opacity(0.8);">
+      <p><strong>Centro Evaluador Autorizado</strong> por la SEP-CONOCER con la clave: <strong>CE1979-OC063-18</strong> a través de ICEMéxico. Empresa legalmente constituida y autorizada.</p>
+      <a href="https://icemexico.com/centros?busqueda=CE1979-OC063-18&estado=Puebla" target="_blank" rel="noopener" class="btn-verify">Verificar Autorización <i class="fa-solid fa-shield-check"></i></a>
+    </div>
+
+    <div class="certificate-showcase reveal-up delay-2">
+      <div class="cert-image-container">
+        <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780637593/1780637262222_h4mqce.png" alt="Certificado Oficial SEP CONOCER">
+      </div>
+      <div class="cert-details-box">
+        <h3>Estructura Formal del Documento</h3>
+        <p>Al concluir de manera satisfactoria el proceso de evaluación, recibirá el documento oficial emitido por el Consejo Nacional de Normalización y Certificación de Competencias Laborales.</p>
+        <ul class="stagger-list">
+          <li class="cert-feature-item"><i class="fa-solid fa-qrcode"></i> Código QR de validación</li>
+          <li class="cert-feature-item"><i class="fa-solid fa-passport"></i> Folio único de registro</li>
+          <li class="cert-feature-item"><i class="fa-solid fa-landmark"></i> Doble sello de la SEP</li>
+          <li class="cert-feature-item"><i class="fa-solid fa-shield-halved"></i> Integración RENAC</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: PROPÓSITO Y PLATAFORMAS -->
+<section class="section-block">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_00.17.28_feujsp.png" class="bg-logo-watermark wm-center" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-bullseye"></i>
+        <span>Nuestro Propósito</span>
+      </div>
+      <h2 class="section-title">El puente hacia la rentabilidad formal</h2>
+    </div>
+
+    <div class="model-explanation reveal-up delay-1">
+      <p>Somos la infraestructura metodológica y legal que otorga estructura profesional y validez oficial a su experiencia. Diseñamos el puente entre su conocimiento empírico y las <strong>plataformas de comercialización educativa más rentables del mundo.</strong></p>
+    </div>
+
+    <div class="diff-grid">
+      <div class="premium-card diff-card reveal-left delay-1">
+        <h3 class="diff-card-title"><i class="fa-solid fa-circle-xmark" style="color: #ef4444"></i> Subir simples videos a internet</h3>
+        <ul class="stagger-list">
+          <li class="no"><i class="fa-solid fa-xmark"></i> Ausencia de estructura instruccional y objetivos medibles.</li>
+          <li class="no"><i class="fa-solid fa-xmark"></i> Percepción de bajo valor y guerra de precios constante.</li>
+          <li class="no"><i class="fa-solid fa-xmark"></i> Sin procesos evaluativos formales ni retroalimentación.</li>
+          <li class="no"><i class="fa-solid fa-xmark"></i> Sin constancia legal con validez institucional.</li>
+          <li class="no"><i class="fa-solid fa-xmark"></i> Desconfianza del consumidor ante la informalidad.</li>
+        </ul>
+      </div>
+
+      <div class="premium-card diff-card animated-border-glow reveal-right delay-2">
+        <h3 class="diff-card-title"><i class="fa-solid fa-circle-check" style="color: var(--wine)"></i> Diseñar un Curso Certificado</h3>
+        <ul class="stagger-list">
+          <li class="yes"><i class="fa-solid fa-check"></i> Estructurados bajo diseño instruccional formal y Taxonomía Bloom.</li>
+          <li class="yes"><i class="fa-solid fa-check"></i> Alta rentabilidad justificada por el aval institucional.</li>
+          <li class="yes"><i class="fa-solid fa-check"></i> Instrumentos de evaluación diagnóstica, sumativa y formativa.</li>
+          <li class="yes"><i class="fa-solid fa-check"></i> Certificación SEP–CONOCER vigente y verificable a nivel nacional.</li>
+          <li class="yes"><i class="fa-solid fa-check"></i> Canalización óptima en infraestructura digital global.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="platforms-title reveal-up">Plataformas de destino compatibles</h3>
+    <div class="platform-logos-grid reveal-up delay-1">
+      <a href="https://hotmart.com/es" target="_blank" rel="noopener" class="premium-card platform-logo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Hotmart_logo.svg" alt="Hotmart" class="platform-img">
+        <p>Negocio propio, control de datos y alta rentabilidad.</p>
+      </a>
+      <a href="https://www.udemy.com/" target="_blank" rel="noopener" class="premium-card platform-logo-card">
+        <img src="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Logo.png" alt="Udemy" class="platform-img">
+        <p>Tráfico masivo y volumen automatizado de alumnos.</p>
+      </a>
+      <a href="https://www.domestika.org/" target="_blank" rel="noopener" class="premium-card platform-logo-card">
+        <img src="https://images.seeklogo.com/logo-png/41/2/domestika-logo-png_seeklogo-412046.png" alt="Domestika" class="platform-img">
+        <p>Sector creativo, diseño, estética y oficios prácticos.</p>
+      </a>
+      <a href="https://www.crehana.com/" target="_blank" rel="noopener" class="premium-card platform-logo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Logo-crehana-2024.svg" alt="Crehana" class="platform-img">
+        <p>Desarrollo profesional, habilidades digitales y oficios.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: ¿PARA QUIÉN ES? -->
+<section class="section-block" id="para-quien">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_1_hvvvfm.png" class="bg-logo-watermark wm-left" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-users-viewfinder"></i>
+        <span>Perfiles Destinatarios</span>
+      </div>
+      <h2 class="section-title">¿A quién está dirigido CERTIPRO 360?</h2>
+      <p class="section-sub">Alineamos metodológicamente a especialistas listos para formalizar su práctica ante dependencias gubernamentales e incrementar su tracción de mercado.</p>
+    </div>
+
+    <div class="profiles-modern-grid">
+      <div class="premium-card profile-modern-card reveal-up delay-1">
+        <div class="profile-img-wrap">
+          <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780635659/pexels-vanessa-garcia-6325954_jm7ag4.jpg" alt="Formadores y Creadores Digitales">
+        </div>
+        <div class="profile-modern-content">
+          <h4 class="profile-modern-title">Formadores y Creadores 💻</h4>
+          <p class="profile-modern-desc">Especialistas que ya comparten contenido pero buscan blindar su marca con el respaldo oficial de la SEP. Transforman su conocimiento en un activo académico de alta fidelidad.</p>
+        </div>
+      </div>
+
+      <div class="premium-card profile-modern-card reveal-up delay-2">
+        <div class="profile-img-wrap">
+          <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780635659/pexels-silverkblack-36731347_kfomgc.jpg" alt="Oficios y Artistas">
+        </div>
+        <div class="profile-modern-content">
+          <h4 class="profile-modern-title">Oficios y Artistas 🛠️</h4>
+          <p class="profile-modern-desc">Maestros de técnicas manuales (barbería, cosmetología, carpintería) que buscan elevar el estatus de su práctica profesional para constituir academias acreditadas.</p>
+        </div>
+      </div>
+
+      <div class="premium-card profile-modern-card reveal-up delay-3">
+        <div class="profile-img-wrap">
+          <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780648108/pexels-bertellifotografia-34774346_lx4sk1.jpg" alt="Consultores y Estrategas de Negocio">
+        </div>
+        <div class="profile-modern-content">
+          <h4 class="profile-modern-title">Consultores y Estrategas 📈</h4>
+          <p class="profile-modern-desc">Asesores dedicados a optimizar procesos comerciales y de capital humano. Validan sus metodologías bajo normativas federales, empleando el folio CONOCER como argumento de autoridad.</p>
+        </div>
+      </div>
+
+      <div class="premium-card profile-modern-card reveal-up delay-4">
+        <div class="profile-img-wrap">
+          <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780644545/pexels-jonathanborba-13451105_w0yzik.jpg" alt="Software y Nuevas Tecnologías">
+        </div>
+        <div class="profile-modern-content">
+          <h4 class="profile-modern-title">Software y Tecnología 🚀</h4>
+          <p class="profile-modern-desc">Expertos en desarrollo, IA y habilidades digitales. Estandarizan sus flujos de enseñanza y validan de manera metodológica sus procesos formativos para maximizar el valor percibido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: INVERSIÓN Y PROCESO (ESTÁNDARES) -->
+<section class="section-block" id="inversion">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_00.17.28_feujsp.png" class="bg-logo-watermark wm-right" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-route"></i>
+        <span>El Proceso</span>
+      </div>
+      <h2 class="section-title">Ruta Metódica de Certificación</h2>
+      <p class="section-sub">Alineación instruccional en 5 etapas definidas de manera sistemática para garantizar su éxito.</p>
+    </div>
+
+    <!-- Timeline Wrapper Centered -->
+    <div class="timeline-wrapper">
+      <div class="timeline-container reveal-up delay-1" id="timeline">
+        <div class="timeline-progress" id="timelineProgress"></div>
+
+        <div class="timeline-item" id="step1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-step">Etapa 01 · Diagnóstico</div>
+            <h3 class="timeline-title">Filtro de competencias y viabilidad</h3>
+            <p class="timeline-desc">Corroboramos que sus competencias vigentes se alineen al estándar y planificamos la recopilación formal de sus productos.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="step2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-step">Etapa 02 · Alineación</div>
+            <h3 class="timeline-title">Curso formativo de estándares oficiales</h3>
+            <p class="timeline-desc">Recibe la capacitación técnica indispensable para alinear su práctica docente con las pautas vigentes del CONOCER.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="step3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-step">Etapa 03 · Gabinete</div>
+            <h3 class="timeline-title">Elaboración e integración del portafolio</h3>
+            <p class="timeline-desc">Estructuración técnica de manuales, instrumentos de evaluación y evidencias requeridos para la etapa probatoria.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="step4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-step">Etapa 04 · Dictaminación</div>
+            <h3 class="timeline-title">Evaluación formal e integración al RENAC</h3>
+            <p class="timeline-desc">Valoración metódica realizada por un evaluador calificado para proceder al trámite del certificado digital expedido por la SEP.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="step5">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-step">Etapa 05 · Tracción comercial</div>
+            <h3 class="timeline-title">Distribución y monetización digital</h3>
+            <p class="timeline-desc">Apertura e integración de su oferta educativa validada para lograr una distribución comercial sostenida en canales globales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estándares Breakdown -->
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Estándares de Competencia</span>
+      </div>
+      <h2 class="section-title">Opciones claras de certificación</h2>
+      <p class="section-sub">Seleccione el estándar adaptado a sus requerimientos técnicos. Todos incluyen asesoría especializada y alineación metodológica.</p>
+    </div>
+
+    <div class="pricing-grid">
+      
+      <div class="premium-card pricing-card reveal-up delay-1">
+        <div>
+          <div class="pricing-tag">Estándar EC076</div>
+          <h3 class="pricing-title">Evaluación de la competencia de candidatos</h3>
+          <p class="pricing-desc">Con base en Estándares de Competencia. Ideal para quienes buscan fungir como evaluadores independientes o integrarse a un Centro de Evaluación.</p>
+          <ul class="stagger-list" style="margin-bottom: 40px;">
+            <li class="yes"><i class="fa-solid fa-check"></i> Preparación técnica de evaluación.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Recopilación de evidencias de competencia.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Emisión de juicios de competencia.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Presentación de resultados formales.</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="pricing-btn">Solicitar Información</a>
+      </div>
+
+      <div class="premium-card pricing-card reveal-up delay-2">
+        <div>
+          <div class="pricing-tag">Estándar EC0301</div>
+          <h3 class="pricing-title">Diseño de cursos de formación del capital humano</h3>
+          <p class="pricing-desc">De manera presencial grupal. Estructura el conocimiento empírico en manuales y cartas descriptivas bajo diseño instruccional.</p>
+          <ul class="stagger-list" style="margin-bottom: 40px;">
+            <li class="yes"><i class="fa-solid fa-check"></i> Diseño de cartas descriptivas.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Elaboración de manuales del instructor.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Elaboración de manuales del participante.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Diseño de instrumentos de evaluación.</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="pricing-btn">Solicitar Información</a>
+      </div>
+
+      <div class="premium-card pricing-card reveal-up delay-3">
+        <div>
+          <div class="pricing-tag">Estándar EC0217.01</div>
+          <h3 class="pricing-title">Impartición de cursos de formación del capital humano</h3>
+          <p class="pricing-desc">De manera presencial grupal. Valida tus habilidades frente a grupo, manejo de dinámicas y técnicas instruccionales.</p>
+          <ul class="stagger-list" style="margin-bottom: 40px;">
+            <li class="yes"><i class="fa-solid fa-check"></i> Preparación de sesiones de capacitación.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Conducción de cursos presenciales.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Evaluación de procesos de aprendizaje.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Manejo de técnicas grupales.</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="pricing-btn">Solicitar Información</a>
+      </div>
+
+      <!-- Star Standard Highlight -->
+      <div class="premium-card pricing-card star-standard reveal-up delay-4">
+        <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_1_hvvvfm.png" class="card-anchor-logo" alt="Sello de Autenticidad">
+        <div>
+          <div class="pricing-tag" style="background: rgba(212, 175, 55, 0.15); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3);">Estándar EC0366 (Recomendado)</div>
+          <h3 class="pricing-title">Desarrollo de cursos de formación en línea</h3>
+          <p class="pricing-desc">Planificación, elaboración de contenidos y verificación. El estándar definitivo para escalar tu conocimiento en plataformas digitales.</p>
+          <ul class="stagger-list" style="margin-bottom: 24px;">
+            <li class="yes"><i class="fa-solid fa-check"></i> Planificación de cursos en línea.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Elaboración de contenidos digitales.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Verificación del funcionamiento del curso.</li>
+            <li class="yes"><i class="fa-solid fa-check"></i> Integración en plataformas LMS.</li>
+          </ul>
+          
+          <div class="price-box">
+            <div class="price-row">
+              <span class="price-label">Inscripción</span>
+              <span class="price-value">$2,470 MXN</span>
+            </div>
+            <div class="price-row">
+              <span class="price-label">2 Colegiaturas de</span>
+              <span class="price-value">$4,940 MXN</span>
+            </div>
+          </div>
+        </div>
+        <a href="#contacto" class="pricing-btn" style="background: var(--wine); color: var(--text-light);">Iniciar mi proceso ahora</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section class="section-block" id="faq">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_1_hvvvfm.png" class="bg-logo-watermark wm-center" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>Preguntas Frecuentes</span>
+      </div>
+      <h2 class="section-title">Respuestas a sus dudas técnicas</h2>
+    </div>
+
+    <div class="faq-wrapper">
+      <div class="faq-item reveal-up delay-1">
+        <button class="faq-trigger">
+          <span class="faq-question">¿Se requiere título universitario previo para iniciar el proceso?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-panel">
+          No. Los estándares de la red CONOCER convalidan la competencia práctica y el saber hacer de las personas. Los lineamientos federales no exigen un grado académico de licenciatura para proceder con la evaluación formal de competencias.
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up delay-2">
+        <button class="faq-trigger">
+          <span class="faq-question">¿Cuál es el tiempo de duración estimado del proceso?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-panel">
+          En promedio, el desarrollo de las etapas de diagnóstico, alineación formativa, estructuración de portafolio y dictaminación final toma de 4 a 8 semanas, dependiendo del ritmo y disponibilidad de entrega del candidato. La duración estimada del proceso dependerá de la modalidad de evaluación y acompañamiento que elijas.
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up delay-3">
+        <button class="faq-trigger">
+          <span class="faq-question">¿El certificado tiene reconocimiento federal?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-panel">
+          Sí. Al ser emitido por la Secretaría de Educación Pública a través del Consejo Nacional de Normalización (CONOCER), el certificado posee plena validez jurídica a nivel federal y queda inscrito en el Registro Nacional de Personas Certificadas (RENAP).
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up delay-4">
+        <button class="faq-trigger">
+          <span class="faq-question">¿Qué sucede en caso de obtener una evaluación de "todavía no competente"?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-panel">
+          Nuestra metodología de acompañamiento tiene como propósito evitar incidencias en la etapa probatoria. Sin embargo, en caso de requerirse, existe el derecho normativo de programar una evaluación complementaria orientada específicamente a subsanar los puntos de mejora identificados.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO DE LEAD CAPTURE -->
+<section class="section-block" id="contacto">
+  <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1780811432/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_00.17.28_feujsp.png" class="bg-logo-watermark wm-left" alt="Watermark">
+  
+  <div class="container">
+    <div class="section-header reveal-up">
+      <div class="section-pill">
+        <i class="fa-solid fa-envelope-open-text"></i>
+        <span>Contacto</span>
+      </div>
+      <h2 class="section-title">Inicie su proceso de formalización</h2>
+      <p class="section-sub">Complete el formulario y un asesor técnico establecerá contacto con usted en un plazo no mayor a 24 horas.</p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-info reveal-left delay-1">
+        <div class="contact-pill">
+          <i class="fa-solid fa-envelope contact-pill-icon"></i>
+          <div class="contact-pill-meta">
+            <h6>Correo electrónico</h6>
+            <p>certipro360dc@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-pill">
+          <i class="fa-solid fa-comments contact-pill-icon"></i>
+          <div class="contact-pill-meta">
+            <h6>WhatsApp directo</h6>
+            <p>221 371 7847</p>
+          </div>
+        </div>
+        
+        <div class="contact-pill">
+          <i class="fa-solid fa-building-shield contact-pill-icon"></i>
+          <div class="contact-pill-meta">
+            <h6>Acreditación Oficial</h6>
+            <p>Clave CE1979-OC063-18</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario Destacado -->
+      <div class="premium-card form-wrapper animated-border-glow reveal-right delay-2">
+        <form id="contactForm">
+          <div class="form-title">Solicitar Diagnóstico Sin Costo</div>
+          <p class="form-subtext">Proporcione sus datos para agendar una sesión de viabilidad de 15 minutos.</p>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="formName">Nombre *</label>
+              <input class="form-input" id="formName" type="text" required placeholder="Nombre completo">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formPhone">Teléfono *</label>
+              <input class="form-input" id="formPhone" type="tel" required placeholder="10 dígitos">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="formEmail">Correo electrónico</label>
+            <input class="form-input" id="formEmail" type="email" placeholder="ejemplo@correo.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="formStandard">¿Cuál certificación te interesa?</label>
+            <select class="form-select" id="formStandard">
+              <option value="">Selecciona una opción</option>
+              <option value="EC0366">EC0366 — Desarrollo de Cursos en Línea</option>
+              <option value="EC0301">EC0301 — Diseño de Cursos Presencial</option>
+              <option value="EC0217.01">EC0217.01 — Impartición de Cursos</option>
+              <option value="EC076">EC076 — Evaluación de Competencias Laborales</option>
+              <option value="Empresarial">Paquete Empresarial / Corporativo</option>
+              <option value="Orientación">No sé cuál elegir, necesito orientación</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="formProfession">¿A qué te dedicas?</label>
+            <input class="form-input" id="formProfession" type="text" placeholder="Tu profesión u oficio actual">
+          </div>
+
+          <button type="submit" class="form-submit-btn">Quiero Información</button>
+          <div style="font-size: 12px; text-align: center; color: var(--text-muted); margin-top: 24px;">
+            🔒 Información confidencial protegida por lineamientos de privacidad aplicables.
+          </div>
+        </form>
+
+        <div class="form-success-card" id="formSuccess">
+          <i class="fa-solid fa-circle-check success-icon"></i>
+          <h4 class="success-title">¡Registro completado!</h4>
+          <p class="success-text" id="successText">Hemos recibido tu solicitud de forma segura. Un asesor se comunicará contigo vía WhatsApp para darte seguimiento.</p>
+          <a href="#" id="waRedirectBtn" target="_blank" class="btn-primary" style="margin: 0 auto; display: inline-flex;">
+            <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="https://res.cloudinary.com/dqtjra1kg/image/upload/v1782855007/Sin_t%C3%ADtulo_-_06_de_junio_de_2026_a_las_01.25.39_3_axvsiq.png" alt="CERTIPRO 360 Logo">
+    </div>
+    <ul class="footer-links">
+      <li><a href="#estudio">Análisis</a></li>
+      <li><a href="#ecosistema">Ecosistema</a></li>
+      <li><a href="#inversion">Estándares</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="footer-socials">
+      <a href="https://www.tiktok.com/@certipro360" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/certipro360/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/CERTIPRO360" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/in/certi-pro-611053412/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 CERTIPRO 360 · Todos los derechos reservados.</div>
+    <div>Acreditado por el CONOCER y la SEP · Clave Oficial CE1979-OC063-18</div>
+  </div>
+</footer>
+
+<script>
+/* ══ COUNTDOWN TIMER (72 HORAS DE LAUNCH) ══ */
+(function(){
+  const STORAGE_KEY = 'certipro_countdown_limit';
+  let limitTime = +localStorage.getItem(STORAGE_KEY) || 0;
+  if(!limitTime || limitTime < Date.now()){
+    limitTime = Date.now() + 72*60*60*1000;
+    localStorage.setItem(STORAGE_KEY, limitTime);
+  }
+  function updateTimer() {
+    const delta = limitTime - Date.now();
+    if (delta <= 0) {
+      ['cdH','cdM','cdS'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const h = Math.floor(delta / 3600000);
+    const m = Math.floor((delta % 3600000) / 60000);
+    const s = Math.floor((delta % 60000) / 1000);
+    document.getElementById('cdH').textContent = String(h).padStart(2, '0');
+    document.getElementById('cdM').textContent = String(m).padStart(2, '0');
+    document.getElementById('cdS').textContent = String(s).padStart(2, '0');
+  }
+  updateTimer();
+  setInterval(updateTimer, 1000);
+})();
+
+/* ══ HEADER SCROLL ══ */
+const header = document.getElementById('header');
+const urgencyBar = document.getElementById('urgencyBar');
+function checkScroll() {
+  const currentScroll = window.scrollY;
+  const barHeight = urgencyBar ? urgencyBar.offsetHeight : 0;
+  if (currentScroll > barHeight) {
+    header.classList.add('scrolled');
+    header.style.top = '0';
+  } else {
+    header.classList.remove('scrolled');
+    header.style.top = (barHeight - currentScroll) + 'px';
+  }
+}
+window.addEventListener('scroll', checkScroll, { passive: true });
+checkScroll();
+
+/* ══ MENU ACTIVO AL HACER SCROLL ══ */
+const sections = document.querySelectorAll('.section-block, .hero');
+const navLinks = document.querySelectorAll('.nav-links a');
+function activeMenuOnScroll() {
+  let scrollPos = window.scrollY + 150;
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + section.getAttribute('id')) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+window.addEventListener('scroll', activeMenuOnScroll, { passive: true });
+
+/* ══ SCROLL REVEAL BIDIRECCIONAL (INTERSECTION OBSERVER) ══ */
+const observerOptions = {
+  root: null,
+  threshold: 0.1,
+  rootMargin: '0px 0px -10% 0px'
+};
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      
+      const listItems = entry.target.querySelectorAll('.stagger-list li');
+      if(listItems.length > 0) {
+        listItems.forEach((li, index) => {
+          li.style.opacity = '0';
+          li.style.transform = 'translateX(-20px)';
+          li.style.transition = `all 0.5s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s`;
+          setTimeout(() => {
+            li.style.opacity = '1';
+            li.style.transform = 'translateX(0)';
+          }, 50);
+        });
+      }
+    } else {
+      entry.target.classList.remove('is-visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-left, .reveal-right').forEach((el) => {
+  revealObserver.observe(el);
+});
+
+/* ══ ACCORDION FAQ ══ */
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const parent = trigger.parentElement;
+    const isActive = parent.classList.contains('active');
+    
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('.faq-panel').style.maxHeight = null;
+    });
+
+    if (!isActive) {
+      parent.classList.add('active');
+      const panel = parent.querySelector('.faq-panel');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ══ PROGRESO DEL TIMELINE CON SCROLL ══ */
+const timeline = document.getElementById('timeline');
+const timelineProgress = document.getElementById('timelineProgress');
+const stepElements = document.querySelectorAll('.timeline-item');
+function animateTimeline() {
+  if (!timeline) return;
+  const rect = timeline.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const progressPercent = Math.min(1, Math.max(0, (windowHeight * 0.7 - rect.top) / rect.height));
+  timelineProgress.style.height = (progressPercent * 100) + '%';
+  
+  stepElements.forEach((step, index) => {
+    const threshold = (index) / stepElements.length;
+    if (progressPercent >= threshold) {
+      step.classList.add('active');
+    } else {
+      step.classList.remove('active');
+    }
+  });
+}
+window.addEventListener('scroll', animateTimeline, { passive: true });
+animateTimeline();
+
+/* ══ MUTUALLY EXCLUSIVE MEDIA PLAYBACK LOGIC ══ */
+const mainVideo = document.getElementById('mainVideo');
+const mainAudio = document.getElementById('mainAudio');
+
+if (mainVideo && mainAudio) {
+  mainVideo.addEventListener('play', () => {
+    if (!mainAudio.paused) {
+      mainAudio.pause();
+    }
+  });
+
+  mainAudio.addEventListener('play', () => {
+    if (!mainVideo.paused) {
+      mainVideo.pause();
+    }
+  });
+}
+
+/* ══ CONTROL Y VALIDACIÓN DEL FORMULARIO DE LEADS ══ */
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+const successText = document.getElementById('successText');
+const waRedirectBtn = document.getElementById('waRedirectBtn');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('formName').value.trim();
+  const phone = document.getElementById('formPhone').value.trim();
+  const email = document.getElementById('formEmail').value.trim();
+  const standard = document.getElementById('formStandard').value;
+  const profession = document.getElementById('formProfession').value.trim();
+
+  const message = `Hola CERTIPRO 360, mi nombre es ${name}. Me interesa la certificación ${standard || 'general'}. Me dedico a: ${profession || 'No especificado'}. Mi número es: ${phone} y mi correo: ${email || 'No proporcionado'}.`;
+  const encodedText = encodeURIComponent(message);
+  const waUrl = `https://wa.me/522213717847?text=${encodedText}`;
+
+  contactForm.style.opacity = '0';
+  setTimeout(() => {
+    contactForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+    formSuccess.style.opacity = '1';
+    
+    waRedirectBtn.setAttribute('href', waUrl);
+    window.open(waUrl, '_blank');
+  }, 300);
+});
+</script>
+</body>
+</html>
